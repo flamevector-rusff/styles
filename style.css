@@ -1,1 +1,13 @@
-
+@font-face { font-family:'Cinzel'; src:url('https://raw.githubusercontent.com/tukiteruamano-a11y/anketa/main/cinzel_regular.ttf'); }
+.weekly-wrapper { width:850px; margin:auto; padding:5px; }
+.weekly-bg { padding:5px; background:url(https://i.ibb.co/0xP0jH4/6bbf97e48d3c1d7905e6169de8564e74.jpg) repeat; border-radius:10px; }
+.weekly-inner { background:#c7c7c7; padding:15px; border-radius:10px; font-family:'Cinzel', serif; font-size:14px; }
+.images { text-align:center; margin-bottom:15px; }
+.images img { width:230px; height:230px; object-fit:cover; border-radius:15px; margin:0 10px; }
+.fc { text-align:center; font-style:italic; margin-bottom:20px; }
+.section-box { background:url(https://i.ibb.co/0xP0jH4/6bbf97e48d3c1d7905e6169de8564e74.jpg) repeat; border-radius:20px; padding:3px; text-align:center; margin-top:20px; color:#c7c7c7; font-size:25px; }
+.section-box h1, .section-box h2 { margin:0; padding:0; }
+.text-box { border:1px solid #a9a9a9; border-radius:10px; padding:10px; margin-top:5px; text-align:justify; text-indent:25px; font-size:14px; }
+.relatives { list-style:none; padding-left:0; margin-left:20px; }
+.relatives li { margin-bottom:5px; }
+.contact { text-align:center; font-size:16px; margin-top:20px; }
