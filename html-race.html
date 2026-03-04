@@ -761,10 +761,195 @@
 		<div style='text-align:center; margin-top:10px;'><strong style='text-align: center; color: maroon; font-size:14px;'>Лимит на расу: 0/10</strong></div>
     </div>
   </div>
-
 </div>
 
+<style>
+@font-face {
+  font-family: 'Dwarven';
+  src: url('https://raw.githubusercontent.com/flamevector-rusff/fonts/main/DwarvenStonecraftCyrExtended.otf');
+}
+@font-face {
+  font-family: 'Leotaro';
+  src: url('https://raw.githubusercontent.com/flamevector-rusff/fonts/main/Leotaro-Regular.otf');
+}
 
+.rp-wrapper{
+  width:850px;
+  margin:0 auto;
+  padding:10px;
+  border-radius:20px;
+  background:url(https://img.freepik.com/premium-photo/seamless-abstract-green-background-with-cracked-texture_743855-18279.jpg) repeat;
+  filter:saturate(70%);
+}
+.rp-content{
+  background:#d6d6d6;
+  border-radius:15px;
+  padding:15px;
+}
 
+.rp-content a {
+  text-decoration: none;  
+  color: #26a226;
+  cursor: pointer;      
+}
 
+.rp-content {
+  user-select: auto;     
+}
 
+.top-title{
+  font-family:'Dwarven';
+  font-size:40px;
+  color:#d6d6d6;
+  margin-bottom:15px;
+  text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+}
+.top-sub{
+  font-size:15px;
+  margin-top:5px;
+  background:#d6d6d6;
+  border-radius:15px;
+  padding:10px;
+  font-family:'Leotaro';
+}
+.top-block{
+  background:url(https://img.freepik.com/premium-photo/seamless-abstract-green-background-with-cracked-texture_743855-18279.jpg) repeat;
+  border-radius:15px;
+  text-align:center;
+  padding:5px;
+  margin-bottom:20px;
+}
+
+.beast-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.beast-item{
+  background:url(https://img.freepik.com/premium-photo/seamless-abstract-green-background-with-cracked-texture_743855-18279.jpg) repeat;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  font-family:'Dwarven';
+  font-size:20px;
+  color:#d6d6d6;
+  text-align:center;
+  padding:5px;
+  text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+}
+
+.beast-info{
+  display:none;
+  background:#f0f0f0;
+  border-radius:15px;
+  padding:15px;
+  font-family:'Leotaro';
+  overflow:hidden;
+  background-size: cover;
+  background-position: top;
+}
+
+.beast-info h3{
+  margin-top:0;
+  margin-bottom:10px;
+  font-family:'Dwarven';
+  font-size:25px;
+  text-align:center;
+}
+
+.info-columns{
+  display:flex;
+  gap:15px;
+  align-items:flex-start;
+}
+
+.info-columns img{
+  max-width:150px;
+  height:auto;
+  object-fit:cover;
+  border-radius:10px;
+  filter:sepia(100%) hue-rotate(70deg) saturate(50%);
+  object-position: top;
+}
+
+.info-columns p{
+  margin:0;
+  font-size:14px;
+}
+
+.beast-title{
+  background:url(https://img.freepik.com/premium-photo/seamless-abstract-green-background-with-cracked-texture_743855-18279.jpg);
+  filter:saturate(70%);
+  border-radius:15px;
+  font-family:'Dwarven';
+  color:#F7F7F7;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:30px;
+  font-size:30px;
+  margin: 10px;
+}
+
+.beast-plus,
+.beast-minus {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    font-family: 'Leotaro';
+    width: 100%;
+    box-sizing: border-box;
+	font-size: 14px;
+}
+
+.text-column {
+  text-indent:25px;
+  display: flex;
+  flex-direction: column; 
+  gap: 5px;       
+}
+
+.members {
+  display: flex;          
+  gap: 10px;              
+}
+
+.member {
+  flex: 1;                
+  border: 1px solid #000; 
+  padding: 15px;          
+  box-sizing: border-box; 
+  text-align: center;     
+  border-radius: 10px; 
+}
+
+</style>
+
+<script">
+const items = document.querySelectorAll(".beast-item");
+const infos = document.querySelectorAll(".beast-info");
+
+items.forEach(item => {
+  item.addEventListener("click", function() {
+
+    const id = this.dataset.id;
+    const target = document.getElementById(id);
+
+    if(this.classList.contains("active")){
+      this.classList.remove("active");
+      target.style.display = "none";
+      return;
+    }
+
+    items.forEach(i => i.classList.remove("active"));
+    infos.forEach(info => info.style.display = "none");
+
+    this.classList.add("active");
+    target.style.display = "block";
+  });
+});</script>
