@@ -764,5 +764,29 @@
   </div>
 
 </div>
+<script>
+const items = document.querySelectorAll(".beast-item");
+const infos = document.querySelectorAll(".beast-info");
+
+items.forEach(item => {
+  item.addEventListener("click", function() {
+
+    const id = this.dataset.id;
+    const target = document.getElementById(id);
+
+    if(this.classList.contains("active")){
+      this.classList.remove("active");
+      target.style.display = "none";
+      return;
+    }
+
+    items.forEach(i => i.classList.remove("active"));
+    infos.forEach(info => info.style.display = "none");
+
+    this.classList.add("active");
+    target.style.display = "block";
+  });
+});
+</script>
 
 
